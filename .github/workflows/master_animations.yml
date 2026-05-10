@@ -1,8 +1,8 @@
-name: Generate Master Animations
+name: Generate Triple Animations
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # Runs every 12 hours
+    - cron: "0 */12 * * *" # Every 12 hours
   workflow_dispatch:
   push:
     branches:
@@ -11,7 +11,7 @@ on:
 jobs:
   generate:
     permissions: 
-      contents: write  # This tells GitHub to allow the bot to write files
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 10
     
@@ -19,29 +19,28 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # 1. Generate the Gamer Vibe (Pac-Man)
-      - name: generate-pacman-animation
+      # 1. Generate Pac-Man & Space Invaders
+      - name: generate-snk-styles
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: Geetesh3
           outputs: |
-            dist/github-contribution-grid-snake.svg?palette=github-light&color_snake=orange&theme=pacman
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=yellow&theme=pacman
+            dist/github-contribution-grid-pacman.svg?palette=github-dark&color_snake=yellow&theme=pacman
+            dist/github-contribution-grid-space-invaders.svg?palette=github-dark&color_snake=red&theme=space-invaders
 
-      # 2. Generate the 3D Skyline (Architect View)
-      - name: generate-3d-skyline
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: Geetesh3
+      # 2. Generate 3D Skyline (Isometric View)
+      - name: generate-isometric-view
+        uses: joshcai/isometric-contributions@main
+        with:
+          github_user_name: Geetesh3
 
-      # 3. Move 3D Skyline to the dist folder so everything pushes together
-      - name: Move files to dist
+      # 3. Move Skyline to dist folder
+      - name: Organize Files
         run: |
           mkdir -p dist
-          mv profile-3d-contrib.svg dist/ 2>/dev/null || true
+          mv ./isometric-view.svg dist/ 2>/dev/null || true
 
-      # 4. Deploy all files to the "output" branch
+      # 4. Push all three to the "output" branch
       - name: push-to-output-branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
