@@ -1,0 +1,31 @@
+name: Generate Skyline
+
+on:
+  schedule:
+    - cron: "5 */12 * * *" 
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  generate:
+    permissions: 
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: generate-skyline-svg
+        uses: joshcai/isometric-contributions@main
+        with:
+          github_user_name: Geetesh3
+          
+      - name: push-to-output
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: .
+          # This action looks for isometric-view.svg in the root
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
