@@ -10,10 +10,15 @@ on:
 
 jobs:
   generate:
+    permissions: 
+      contents: write  # This tells GitHub to allow the bot to write files
     runs-on: ubuntu-latest
     timeout-minutes: 10
     
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       # 1. Generate the Gamer Vibe (Pac-Man)
       - name: generate-pacman-animation
         uses: Platane/snk/svg-only@v3
@@ -30,7 +35,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: Geetesh3
 
-      # 3. Deploy all files to the "output" branch
+      # 3. Move 3D Skyline to the dist folder so everything pushes together
+      - name: Move files to dist
+        run: |
+          mkdir -p dist
+          mv profile-3d-contrib.svg dist/ 2>/dev/null || true
+
+      # 4. Deploy all files to the "output" branch
       - name: push-to-output-branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
