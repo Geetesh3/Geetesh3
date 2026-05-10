@@ -181,6 +181,20 @@ focus:
 
 ---
 
+# ⌚ Weekly Coding Activity
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=Geetesh3&amp;theme=radical&amp;layout=compact" alt="WakaTime Stats" />
+</div>
+
+---
+
+# 💬 Random Dev Thought
+<div align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&amp;theme=radical" alt="Quotes" />
+</div>
+
+---
+
 # 📈 Contribution Graph
 
 <div align="center">
@@ -191,15 +205,41 @@ focus:
 
 ---
 
-# 🐍 Contribution Snake
-
+# 🐍Snake Expedition
 <div align="center">
-
-<img src="https://raw.githubusercontent.com/Geetesh3/Geetesh3/output/github-contribution-grid-snake-dark.svg" />
-
+  <img src="https://raw.githubusercontent.com/Geetesh3/Geetesh3/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
 </div>
 
 ---
+
+# 🕹️ Pac-Man Contribution Raid
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Geetesh3/Geetesh3/output/github-contribution-grid-pacman.svg" alt="Pacman Animation" />
+</div>
+
+---
+
+# 🏙️ Contribution Skyline (3D)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Geetesh3/Geetesh3/output/isometric-view.svg" alt="3D City Animation" />
+</div>
+
+---
+
+# 🛸 Space Invaders: Code Defense
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Geetesh3/Geetesh3/output/github-contribution-grid-space-invaders.svg" alt="Space Invaders" />
+</div>
+
+---
+
+# 📊 3D Coding Volume
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Geetesh3/Geetesh3/output/appearance.svg" alt="3D Bar Chart" />
+</div>
+
+---
+
 
 # 💻 Development Environment
 
