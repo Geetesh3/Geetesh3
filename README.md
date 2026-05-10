@@ -212,6 +212,12 @@ focus:
 
 ---
 
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=200&amp;section=header&amp;text=GEETESH3%20DIGITAL%20LAB&amp;fontSize=50&amp;animation=fadeIn" width="100%" />
+</div>
+
+---
+
 # 🕹️ Pac-Man Contribution Raid
 <div align="center">
   <img src="https://raw.githubusercontent.com/Geetesh3/Geetesh3/output/github-contribution-grid-pacman.svg" alt="Pacman Animation" />
@@ -233,9 +239,8 @@ focus:
 
 ---
 
-# 📊 3D Coding Volume
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Geetesh3/Geetesh3/output/appearance.svg" alt="3D Bar Chart" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&amp;color=gradient&amp;height=50&amp;section=footer" width="100%" />
 </div>
 
 ---
